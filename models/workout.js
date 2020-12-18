@@ -11,7 +11,6 @@ const workoutSchema = new Schema({
         sets: Number,
         distance: Number
     }]
-
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
