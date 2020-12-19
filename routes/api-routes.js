@@ -11,9 +11,20 @@ app.get("/api/workouts", function(req, res) {
 
 
 
-// post - new workout
+// POST - Add a new workout
+app.post("/api/workouts/", (req, res) => {
+    db.Workout.create(req.body)
+    .then( (dbWorkOut) => {
+        res.json(dbWorkOut);
+      })
+    .catch(err => {
+        res.status(400).json(err);
+    });
+  });
 
-// get - range of one week
+
+
+// GET - range of one week
 app.get("/api/workouts/range", function(req, res) {
     db.Workout.find({})
     .then(function(dbWorkOuts) {
