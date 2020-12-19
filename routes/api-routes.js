@@ -9,8 +9,6 @@ app.get("/api/workouts", function(req, res) {
       });
   });
 
-
-
 // POST - Add a new workout
 app.post("/api/workouts/", (req, res) => {
     db.Workout.create(req.body)
